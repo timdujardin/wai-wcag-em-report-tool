@@ -245,7 +245,7 @@
       Guidelines (WCAG) Overview</a>
   </li>
   <li>
-    <a href="https://www.w3.org/WAI/WCAG21/quickref/">How to Meet WCAG Quick
+    <a href="https://www.w3.org/WAI/WCAG22/quickref/">How to Meet WCAG Quick
       Reference</a>
   </li>
   <li>

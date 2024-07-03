@@ -170,6 +170,7 @@
   let assertionsToRemove = [];
   $: {
     // Get or create an Assertion
+    //$assertions = [];
     const available = [];
     $CriteriaSelected.forEach((criteria) => {
       const check = criteria.num;
@@ -246,5 +247,4 @@
     }
     $interactedOpenEvaluation = false;
   }
-
 </script>
