@@ -1,8 +1,15 @@
 <ReportNumbers criteria="{criteriaCount}" />
 
 <script>
+  import { getContext } from 'svelte';
+  import { Link } from 'svelte-navigator';
   import ReportNumbers from './ReportNumbers.svelte';
+  import ResultCard from './ResultCard.svelte';
 
+  import assertions from '@app/stores/earl/assertionStore/index.js';
+  import subjects, {
+    TestSubjectTypes
+  } from '@app/stores/earl/subjectStore/index.js';
   import { CriteriaSelected } from '@app/stores/selectedCriteriaStore.js';
   let criteriaCount = 0;
   $: criteriaCount = $CriteriaSelected.length;
