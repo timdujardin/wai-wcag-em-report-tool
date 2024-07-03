@@ -77,7 +77,7 @@
                   <span
                     class="results-label-mobile"
                   >{TRANSLATED.HEADER_IMPACT}:</span>
-                  {assertion.result.impact.id || TRANSLATED.TEXT_NO_IMPACT}
+                  {assertion.result.impact.title || TRANSLATED.TEXT_NO_IMPACT}
                 </p>
               {:else}
                 <p>
@@ -97,7 +97,7 @@
                       <span
                         class="results-label-mobile"
                       >{TRANSLATED.HEADER_IMPACT}:</span>
-                      {assertion.result.impact.id || TRANSLATED.TEXT_NO_IMPACT}
+                      {assertion.result.impact.title || TRANSLATED.TEXT_NO_IMPACT}
                     </p>
                   {/if}
                 {/each}

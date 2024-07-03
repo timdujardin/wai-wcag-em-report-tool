@@ -161,17 +161,14 @@ export class TestResult extends BaseModel {
 
     this.type = ['TestResult'];
 
-    console.log('before', this.impact);
-
     this.outcome = this.setOutcome(
       (options.outcome && options.outcome.id) || OUTCOME.UNTESTED.id
     );
 
     this.impact = this.setImpact(
-      (options.impact && options.impact.id) || IMPACT.NO_IMPACT.id
+      options.impact?.id || IMPACT.NO_IMPACT.id,
+      options.impact?.title || IMPACT.NO_IMPACT.id
     );
-
-    console.log('after', options.impact && options.impact.id);
   }
 
   /**
@@ -197,17 +194,12 @@ export class TestResult extends BaseModel {
   /**
    * Set the impact by ImpactValue id
    * @param {String} id ld string, compacted IRI e.g. earl:warning
+   * @param {String} title ld string, title
    */
-  setImpact(id) {
+  setImpact(id, title) {
     if (typeof id !== 'string') {
       console.warn('[setImpact]: Expected id to be defined as type string.');
     }
-
-    console.log(
-      [...impactValues].find((impact) => {
-        return impact.id === id;
-      })
-    );
 
     const newImpact = [...impactValues].find((impact) => {
       return impact.id === id;
@@ -217,7 +209,10 @@ export class TestResult extends BaseModel {
       this.impact = newImpact;
     }
 
-    return newImpact;
+    // FIXME: Check for missing 'title' context
+    // new TestResult(options.result || {}) makes the Impact Title undefined for some reason
+    // https://github.com/timdujardin/wai-wcag-em-report-tool/blob/main/src/stores/earl/assertionStore/models.js#L45
+    return { ...newImpact, ...{ title } };
   }
 
   /**

@@ -1,13 +1,21 @@
 <div class="AuditorImport">
   <span class="AuditorImport__beta">Beta</span>
-  <p>{@html TRANSLATED.IMPORT_DATA_INTRO}
-    <a href="https://github.com/w3c/wai-wcag-em-report-tool/wiki/How-to-use-the-%E2%80%9CAdd-data-from-other-(automated)-tests%E2%80%9D-functionality" class="more-info" title={TRANSLATED.MORE_INFO}>
+  <p>
+    {@html TRANSLATED.IMPORT_DATA_INTRO}
+    <a
+      href="https://github.com/w3c/wai-wcag-em-report-tool/wiki/How-to-use-the-%E2%80%9CAdd-data-from-other-(automated)-tests%E2%80%9D-functionality"
+      class="more-info"
+      title="{TRANSLATED.MORE_INFO}"
+    >
       <span aria-hidden="true" class="more-info__icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 450">
-<path fill="currentColor" d="M256 344v-40c0-4.5-3.5-8-8-8h-24v-128c0-4.5-3.5-8-8-8h-80c-4.5 0-8 3.5-8 8v40c0 4.5 3.5 8 8 8h24v80h-24c-4.5 0-8 3.5-8 8v40c0 4.5 3.5 8 8 8h112c4.5 0 8-3.5 8-8zM224 120v-40c0-4.5-3.5-8-8-8h-48c-4.5 0-8 3.5-8 8v40c0 4.5 3.5 8 8 8h48c4.5 0 8-3.5 8-8zM384 224c0 106-86 192-192 192s-192-86-192-192 86-192 192-192 192 86 192 192z"></path>
+          <path
+            fill="currentColor"
+            d="M256 344v-40c0-4.5-3.5-8-8-8h-24v-128c0-4.5-3.5-8-8-8h-80c-4.5 0-8 3.5-8 8v40c0 4.5 3.5 8 8 8h24v80h-24c-4.5 0-8 3.5-8 8v40c0 4.5 3.5 8 8 8h112c4.5 0 8-3.5 8-8zM224 120v-40c0-4.5-3.5-8-8-8h-48c-4.5 0-8 3.5-8 8v40c0 4.5 3.5 8 8 8h48c4.5 0 8-3.5 8-8zM384 224c0 106-86 192-192 192s-192-86-192-192 86-192 192-192 192 86 192 192z"
+          ></path>
         </svg>
-     </span>
-     <span class="visuallyhidden">{TRANSLATED.MORE_INFO}</span>
+      </span>
+      <span class="visuallyhidden">{TRANSLATED.MORE_INFO}</span>
     </a>
   </p>
   <File
@@ -15,7 +23,7 @@
     label="{TRANSLATED.BUTTON}"
     labelsub="({TRANSLATED.BUTTON_HINT})"
     on:change="{handleChange}"
-    on:click={handleClick}
+    on:click="{handleClick}"
   />
 </div>
 
@@ -23,8 +31,8 @@
   a.more-info,
   a.more-info:visited {
     color: var(--light-blue);
-    margin-left: .25em;
-    font-size: .8rem;
+    margin-left: 0.25em;
+    font-size: 0.8rem;
   }
   a.more-info:hover {
     color: var(--ocean);
@@ -43,21 +51,21 @@
     font-size: 90%;
     position: relative;
   }
-    .AuditorImport p:first-child {
-      margin-top: 0;
-    }
-    .AuditorImport__beta {
-      background-color: var(--cloudy);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      padding: .25em .5em;
-      position: absolute;
-      top: -1em;
-      left: 1em;
-      transform: rotate(-1deg);
-      font-size: 90%;
-      display: inline-block;
-    }
+  .AuditorImport p:first-child {
+    margin-top: 0;
+  }
+  .AuditorImport__beta {
+    background-color: var(--cloudy);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25em 0.5em;
+    position: absolute;
+    top: -1em;
+    left: 1em;
+    transform: rotate(-1deg);
+    font-size: 90%;
+    display: inline-block;
+  }
   @media (min-width: 47.5em) {
     .AuditorImport {
       float: right;
@@ -84,15 +92,17 @@
     IMPORT_DATA_INTRO: $translate('PAGES.AUDIT.IMPORT_DATA_INTRO'),
     JSONLD_SYNTAX: $translate('UI.IMPORT.ERROR.JSONLD_SYNTAX'),
     NO_ASSERTIONS: $translate('UI.IMPORT.ERROR.NO_ASSERTIONS'),
-    NO_COMPATIBLE_ASSERTIONS: $translate('UI.IMPORT.ERROR.NO_COMPATIBLE_ASSERTIONS'),
+    NO_COMPATIBLE_ASSERTIONS: $translate(
+      'UI.IMPORT.ERROR.NO_COMPATIBLE_ASSERTIONS'
+    ),
     ERROR_DEFAULT: $translate('UI.COMMON.ERROR.DEFAULT'),
     IMPORT_SUCCESSFUL: $translate('UI.IMPORT.SUCCESSFUL'),
     FILE_ERROR: $translate('UI.IMPORT.ERROR.FILE_ERROR'),
     MORE_INFO: $translate('UI.IMPORT.MORE_INFO')
   };
 
-  function handleClick (event) {
-    event.target.value = ''
+  function handleClick(event) {
+    event.target.value = '';
   }
 
   function handleChange(event) {
